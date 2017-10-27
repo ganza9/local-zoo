@@ -1,0 +1,17 @@
+{
+  "name": "local-zoo",
+  "description": "local zoo animal tracker",
+  "main": "",
+  "authors": [
+    "Gennaro Anzalone <g.anzalone12@gmail.com>"
+  ],
+  "license": "MIT",
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
