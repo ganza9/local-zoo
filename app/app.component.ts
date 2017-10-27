@@ -16,8 +16,19 @@ import { Component } from '@angular/core';
       <li>Sex: {{currentAnimal.sex}}</li>
       <li>Likes: {{currentAnimal.likes}}</li>
       <li>Dislikes: {{currentAnimal.dislikes}}</li>
-      <li><button class="btn" (click)="editTask()">Edit</button></li>
+      <li><button class="btn" (click)="editAnimal(currentAnimal)">Edit</button></li>
     </ul>
+    <hr>
+    <div>
+      <h4>Edit Animal</h4>
+      <h3>{{selectedAnimal.name}} the {{selectedAnimal.species}}</h3>
+      <label>Edit Name:</label>
+      <input [(ngModel)]="selectedAnimal.name">
+      <label>Edit Age:</label>
+      <input [(ngModel)]="selectedAnimal.age">
+      <label>Edit Caretakers:</label>
+      <input [(ngModel)]="selectedAnimal.caretakers">
+    </div>
   </div>
   `
 })
@@ -26,11 +37,11 @@ export class AppComponent {
   animals: Animal[] = [
     new Animal ('Arctic Fox', 'Moon', 2, 'Carnivore', 'Northern Trail', 5, 'Female', 'Cool shade', 'Loud noises'),
     new Animal ('Ocelot', 'Prince', 4, 'Carnivore', 'Tropical Rain Forest Building', 6, 'Male', 'Laying in the sun', 'Toys that are non rope based'),
-    new Animal ('Northwest Black Tailed Deer', 'Tinkerbell', 8, 'Herbivore', 'Northern Trail', 2, 'Female', 'Delicate roots and leaves', 'Loud noises')
-  ];
+    new Animal ('Northwest Black Tailed Deer', 'Tinkerbell', 8, 'Herbivore', 'Northern Trail', 2, 'Female', 'Delicate roots and leaves', 'Loud noises')];
+  selectedAnimal: Animal = this.animals[0];
 
-  editTask() {
-    alert("You just requested to edit an Animal!");
+  editAnimal(clickedAnimal) {
+    this.selectedAnimal = clickedAnimal;
   }
 }
 
