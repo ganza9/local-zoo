@@ -12,15 +12,15 @@ import { Animal } from './animal.model';
   </select>
 
   <ul *ngFor="let currentAnimal of childAnimalList | matureness:filterByMatureness">
-    <li>Species: {{currentAnimal.species}}</li>
-    <li>Name: {{currentAnimal.name}}</li>
-    <li>Age: {{currentAnimal.age}}</li>
-    <li>Diet: {{currentAnimal.diet}}</li>
-    <li>Location: {{currentAnimal.location}}</li>
-    <li>Caretakers: {{currentAnimal.caretakers}}</li>
-    <li>Sex: {{currentAnimal.sex}}</li>
-    <li>Likes: {{currentAnimal.likes}}</li>
-    <li>Dislikes: {{currentAnimal.dislikes}}</li>
+    <li><b>Species:</b> {{currentAnimal.species}}</li>
+    <li><b>Name:</b> {{currentAnimal.name}}</li>
+    <li><b>Age:</b> {{currentAnimal.age}}</li>
+    <li><b>Diet:</b> {{currentAnimal.diet}}</li>
+    <li><b>Location:</b> {{currentAnimal.location}}</li>
+    <li><b>Caretakers:</b> {{currentAnimal.caretakers}}</li>
+    <li><b>Sex:</b> {{currentAnimal.sex}}</li>
+    <li><b>Likes:</b> {{currentAnimal.likes}}</li>
+    <li><b>Dislikes:</b> {{currentAnimal.dislikes}}</li>
     <li><button class="btn btn-info" (click)="editButtonHasBeenClicked(currentAnimal)">Edit</button></li>
   </ul>
 
