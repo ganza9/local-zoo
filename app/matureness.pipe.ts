@@ -8,13 +8,24 @@ import { Animal } from './animal.model';
 
 export class MaturenessPipe implements PipeTransform {
 
-  transform(input: Animal[]){
+  transform(input: Animal[], desiredMatureness){
     var output: Animal[] = [];
-    for (var i = 0; i < input.length; i++){
-      if (input[i].age <= 2){
-        output.push(input[i]);
+    if(desiredMatureness === "immatureAnimals"){
+      for (var i = 0; i < input.length; i++){
+        if (input[i].age <= 2){
+          output.push(input[i]);
+        }
       }
+      return output;
+    } else if (desiredMatureness === "matureAnimals") {
+      for (var i = 0; i < input.length; i++) {
+        if (input [i].age >= 3) {
+          output.push(input[i]);
+        }
+      }
+      return output;
+    } else {
+      return input;
     }
-    return output;
   }
 }
